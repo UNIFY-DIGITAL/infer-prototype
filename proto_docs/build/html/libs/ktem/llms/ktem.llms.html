@@ -1,0 +1,934 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ktem.llms package &mdash; Kotaemon Documentation 1.0.0 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/css/theme.css?v=e59714d7" />
+
+  
+      <script src="../../../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../../../_static/documentation_options.js?v=8d563738"></script>
+      <script src="../../../_static/doctools.js?v=9bcbadda"></script>
+      <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../../index.html" class="icon icon-home">
+            Kotaemon Documentation
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../architecture.html">Architecture Overview</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../architecture.html#components">Components</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../architecture.html#flow">Flow</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../flowsettings.html">flowsettings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../code_overview.html">Code Overview</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../code_overview.html#core-modules">Core Modules</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../code_overview.html#app-module">App Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../code_overview.html#flow-settings-module">Flow Settings Module</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../code_overview.html#libraries">Libraries</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../project_structure.html">Project Structure</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../project_structure.html#directory-layout">Directory Layout</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../project_structure.html#key-components">Key Components</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../index.html">Libraries Overview</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../kotaemon/index.html">kotaemon</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../kotaemon/agents/index.html">agents</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../kotaemon/agents/io/index.html">io</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../kotaemon/agents/io/index.html#submodules">Submodules</a><ul>
+<li class="toctree-l6"><a class="reference internal" href="../../kotaemon/agents/io/base.html">base.py</a><ul>
+<li class="toctree-l7"><a class="reference internal" href="../../kotaemon/agents/io/base.html#classes">Classes</a></li>
+<li class="toctree-l7"><a class="reference internal" href="../../kotaemon/agents/io/base.html#module-kotaemon.agents.io.base.AgentType">AgentType</a></li>
+<li class="toctree-l7"><a class="reference internal" href="../../kotaemon/agents/io/base.html#module-kotaemon.agents.io.base.BaseScratchPad">BaseScratchPad class</a><ul>
+<li class="toctree-l8"><a class="reference internal" href="../../kotaemon/agents/io/base.html#attributes">Attributes:</a></li>
+<li class="toctree-l8"><a class="reference internal" href="../../kotaemon/agents/io/base.html#methods">Methods:</a></li>
+<li class="toctree-l8"><a class="reference internal" href="../../kotaemon/agents/io/base.html#code-example">Code Example:</a></li>
+</ul>
+</li>
+<li class="toctree-l7"><a class="reference internal" href="../../kotaemon/agents/io/base.html#module-kotaemon.agents.io.base.AgentAction">AgentAction Class</a><ul>
+<li class="toctree-l8"><a class="reference internal" href="../../kotaemon/agents/io/base.html#id1">Attributes:</a></li>
+<li class="toctree-l8"><a class="reference internal" href="../../kotaemon/agents/io/base.html#code-implementation">Code Implementation:</a></li>
+<li class="toctree-l8"><a class="reference internal" href="../../kotaemon/agents/io/base.html#usage-example">Usage Example:</a></li>
+</ul>
+</li>
+<li class="toctree-l7"><a class="reference internal" href="../../kotaemon/agents/io/base.html#module-kotaemon.agents.io.base.AgentFinish">AgentFinish Class</a><ul>
+<li class="toctree-l8"><a class="reference internal" href="../../kotaemon/agents/io/base.html#id2">Attributes:</a></li>
+<li class="toctree-l8"><a class="reference internal" href="../../kotaemon/agents/io/base.html#id3">Code Implementation:</a></li>
+<li class="toctree-l8"><a class="reference internal" href="../../kotaemon/agents/io/base.html#id4">Usage Example:</a></li>
+</ul>
+</li>
+<li class="toctree-l7"><a class="reference internal" href="../../kotaemon/agents/io/base.html#module-kotaemon.agents.io.base.AgentOutput">AgentOutput</a><ul>
+<li class="toctree-l8"><a class="reference internal" href="../../kotaemon/agents/io/base.html#id5">Attributes:</a></li>
+<li class="toctree-l8"><a class="reference internal" href="../../kotaemon/agents/io/base.html#id6">Code Implementation:</a></li>
+<li class="toctree-l8"><a class="reference internal" href="../../kotaemon/agents/io/base.html#id7">Usage Example:</a></li>
+</ul>
+</li>
+<li class="toctree-l7"><a class="reference internal" href="../../kotaemon/agents/io/base.html#functions">Functions</a></li>
+<li class="toctree-l7"><a class="reference internal" href="../../kotaemon/agents/io/base.html#module-kotaemon.agents.io.base.check_log">check_log</a></li>
+<li class="toctree-l7"><a class="reference internal" href="../../kotaemon/agents/io/base.html#usage">Usage</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l5"><a class="reference internal" href="../../kotaemon/agents/io/index.html#base-module">base module</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../kotaemon/agents/io/index.html#classes-and-utilities">Classes and Utilities</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../kotaemon/agents/io/index.html#utilities">Utilities</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="../../kotaemon/agents/react/index.html">react</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../kotaemon/agents/react/index.html#submodules">Submodules</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../kotaemon/agents/react/index.html#module-kotaemon.agents.react.agent">kotaemon.agents.react.agent module</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../kotaemon/agents/react/index.html#module-kotaemon.agents.react.prompt">kotaemon.agents.react.prompt module</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../kotaemon/agents/react/index.html#module-kotaemon.agents.react">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="../../kotaemon/agents/rewoo/index.html">rewoo</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../kotaemon/agents/rewoo/index.html#submodules">Submodules</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../kotaemon/agents/rewoo/index.html#module-kotaemon.agents.rewoo.agent">kotaemon.agents.rewoo.agent module</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../kotaemon/agents/rewoo/index.html#module-kotaemon.agents.rewoo.planner">kotaemon.agents.rewoo.planner module</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../kotaemon/agents/rewoo/index.html#module-kotaemon.agents.rewoo.prompt">kotaemon.agents.rewoo.prompt module</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../kotaemon/agents/rewoo/index.html#module-kotaemon.agents.rewoo.solver">kotaemon.agents.rewoo.solver module</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../kotaemon/agents/rewoo/index.html#module-kotaemon.agents.rewoo">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="../../kotaemon/agents/tools/index.html">tools</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../kotaemon/agents/tools/index.html#submodules">Submodules</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../kotaemon/agents/tools/index.html#module-kotaemon.agents.tools.base">kotaemon.agents.tools.base module</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../kotaemon/agents/tools/index.html#module-kotaemon.agents.tools.google">kotaemon.agents.tools.google module</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../kotaemon/agents/tools/index.html#module-kotaemon.agents.tools.llm">kotaemon.agents.tools.llm module</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../kotaemon/agents/tools/index.html#module-kotaemon.agents.tools.wikipedia">kotaemon.agents.tools.wikipedia module</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../kotaemon/agents/tools/index.html#module-kotaemon.agents.tools">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="../../kotaemon/agents/index.html#module-kotaemon.agents.base">Modules</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../kotaemon/agents/index.html#module-kotaemon.agents">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../kotaemon/base/index.html">Base</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../kotaemon/base/component.html">Component Module</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../kotaemon/base/component.html#overview">Overview</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../kotaemon/base/component.html#basecomponent-class">BaseComponent Class</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../kotaemon/base/component.html#utilities">Utilities</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="../../kotaemon/base/schema.html">Schema Module</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../kotaemon/base/schema.html#overview">Overview</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../kotaemon/base/schema.html#classes">Classes</a><ul>
+<li class="toctree-l6"><a class="reference internal" href="../../kotaemon/base/schema.html#document">Document</a><ul>
+<li class="toctree-l7"><a class="reference internal" href="../../kotaemon/base/schema.html#kotaemon.base.schema.Document"><code class="docutils literal notranslate"><span class="pre">Document</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l6"><a class="reference internal" href="../../kotaemon/base/schema.html#documentwithembedding">DocumentWithEmbedding</a><ul>
+<li class="toctree-l7"><a class="reference internal" href="../../kotaemon/base/schema.html#kotaemon.base.schema.DocumentWithEmbedding"><code class="docutils literal notranslate"><span class="pre">DocumentWithEmbedding</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l6"><a class="reference internal" href="../../kotaemon/base/schema.html#basemessage">BaseMessage</a><ul>
+<li class="toctree-l7"><a class="reference internal" href="../../kotaemon/base/schema.html#kotaemon.base.schema.BaseMessage"><code class="docutils literal notranslate"><span class="pre">BaseMessage</span></code></a><ul>
+<li class="toctree-l8"><a class="reference internal" href="../../kotaemon/base/schema.html#kotaemon.base.schema.BaseMessage.to_openai_format"><code class="docutils literal notranslate"><span class="pre">BaseMessage.to_openai_format()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l6"><a class="reference internal" href="../../kotaemon/base/schema.html#systemmessage">SystemMessage</a><ul>
+<li class="toctree-l7"><a class="reference internal" href="../../kotaemon/base/schema.html#kotaemon.base.schema.SystemMessage"><code class="docutils literal notranslate"><span class="pre">SystemMessage</span></code></a><ul>
+<li class="toctree-l8"><a class="reference internal" href="../../kotaemon/base/schema.html#kotaemon.base.schema.SystemMessage.to_openai_format"><code class="docutils literal notranslate"><span class="pre">SystemMessage.to_openai_format()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l6"><a class="reference internal" href="../../kotaemon/base/schema.html#aimessage">AIMessage</a><ul>
+<li class="toctree-l7"><a class="reference internal" href="../../kotaemon/base/schema.html#kotaemon.base.schema.AIMessage"><code class="docutils literal notranslate"><span class="pre">AIMessage</span></code></a><ul>
+<li class="toctree-l8"><a class="reference internal" href="../../kotaemon/base/schema.html#kotaemon.base.schema.AIMessage.to_openai_format"><code class="docutils literal notranslate"><span class="pre">AIMessage.to_openai_format()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l6"><a class="reference internal" href="../../kotaemon/base/schema.html#humanmessage">HumanMessage</a><ul>
+<li class="toctree-l7"><a class="reference internal" href="../../kotaemon/base/schema.html#kotaemon.base.schema.HumanMessage"><code class="docutils literal notranslate"><span class="pre">HumanMessage</span></code></a><ul>
+<li class="toctree-l8"><a class="reference internal" href="../../kotaemon/base/schema.html#kotaemon.base.schema.HumanMessage.to_openai_format"><code class="docutils literal notranslate"><span class="pre">HumanMessage.to_openai_format()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l6"><a class="reference internal" href="../../kotaemon/base/schema.html#retrieveddocument">RetrievedDocument</a><ul>
+<li class="toctree-l7"><a class="reference internal" href="../../kotaemon/base/schema.html#kotaemon.base.schema.RetrievedDocument"><code class="docutils literal notranslate"><span class="pre">RetrievedDocument</span></code></a><ul>
+<li class="toctree-l8"><a class="reference internal" href="../../kotaemon/base/schema.html#kotaemon.base.schema.RetrievedDocument.score"><code class="docutils literal notranslate"><span class="pre">RetrievedDocument.score</span></code></a></li>
+<li class="toctree-l8"><a class="reference internal" href="../../kotaemon/base/schema.html#kotaemon.base.schema.RetrievedDocument.retrieval_metadata"><code class="docutils literal notranslate"><span class="pre">RetrievedDocument.retrieval_metadata</span></code></a></li>
+<li class="toctree-l8"><a class="reference internal" href="../../kotaemon/base/schema.html#id0"><code class="docutils literal notranslate"><span class="pre">RetrievedDocument.retrieval_metadata</span></code></a></li>
+<li class="toctree-l8"><a class="reference internal" href="../../kotaemon/base/schema.html#id1"><code class="docutils literal notranslate"><span class="pre">RetrievedDocument.score</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l6"><a class="reference internal" href="../../kotaemon/base/schema.html#llminterface">LLMInterface</a><ul>
+<li class="toctree-l7"><a class="reference internal" href="../../kotaemon/base/schema.html#kotaemon.base.schema.LLMInterface"><code class="docutils literal notranslate"><span class="pre">LLMInterface</span></code></a><ul>
+<li class="toctree-l8"><a class="reference internal" href="../../kotaemon/base/schema.html#kotaemon.base.schema.LLMInterface.candidates"><code class="docutils literal notranslate"><span class="pre">LLMInterface.candidates</span></code></a></li>
+<li class="toctree-l8"><a class="reference internal" href="../../kotaemon/base/schema.html#kotaemon.base.schema.LLMInterface.completion_tokens"><code class="docutils literal notranslate"><span class="pre">LLMInterface.completion_tokens</span></code></a></li>
+<li class="toctree-l8"><a class="reference internal" href="../../kotaemon/base/schema.html#kotaemon.base.schema.LLMInterface.logits"><code class="docutils literal notranslate"><span class="pre">LLMInterface.logits</span></code></a></li>
+<li class="toctree-l8"><a class="reference internal" href="../../kotaemon/base/schema.html#kotaemon.base.schema.LLMInterface.logprobs"><code class="docutils literal notranslate"><span class="pre">LLMInterface.logprobs</span></code></a></li>
+<li class="toctree-l8"><a class="reference internal" href="../../kotaemon/base/schema.html#kotaemon.base.schema.LLMInterface.messages"><code class="docutils literal notranslate"><span class="pre">LLMInterface.messages</span></code></a></li>
+<li class="toctree-l8"><a class="reference internal" href="../../kotaemon/base/schema.html#kotaemon.base.schema.LLMInterface.prompt_tokens"><code class="docutils literal notranslate"><span class="pre">LLMInterface.prompt_tokens</span></code></a></li>
+<li class="toctree-l8"><a class="reference internal" href="../../kotaemon/base/schema.html#kotaemon.base.schema.LLMInterface.total_cost"><code class="docutils literal notranslate"><span class="pre">LLMInterface.total_cost</span></code></a></li>
+<li class="toctree-l8"><a class="reference internal" href="../../kotaemon/base/schema.html#kotaemon.base.schema.LLMInterface.total_tokens"><code class="docutils literal notranslate"><span class="pre">LLMInterface.total_tokens</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l6"><a class="reference internal" href="../../kotaemon/base/schema.html#extractoroutput">ExtractorOutput</a><ul>
+<li class="toctree-l7"><a class="reference internal" href="../../kotaemon/base/schema.html#kotaemon.base.schema.ExtractorOutput"><code class="docutils literal notranslate"><span class="pre">ExtractorOutput</span></code></a><ul>
+<li class="toctree-l8"><a class="reference internal" href="../../kotaemon/base/schema.html#kotaemon.base.schema.ExtractorOutput.matches"><code class="docutils literal notranslate"><span class="pre">ExtractorOutput.matches</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l5"><a class="reference internal" href="../../kotaemon/base/schema.html#source-code">Source Code</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="../../kotaemon/base/index.html#exports">Exports</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../kotaemon/base/index.html#classes">Classes</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../kotaemon/base/index.html#utilities">Utilities</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../kotaemon/chatbot/index.html">Chatbot</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../kotaemon/chatbot/base.html">Chatbot Base</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../kotaemon/chatbot/base.html#classes">Classes</a><ul>
+<li class="toctree-l6"><a class="reference internal" href="../../kotaemon/chatbot/base.html#basechatbot">BaseChatBot</a><ul>
+<li class="toctree-l7"><a class="reference internal" href="../../kotaemon/chatbot/base.html#kotaemon.chatbot.base.BaseChatBot"><code class="docutils literal notranslate"><span class="pre">BaseChatBot</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l6"><a class="reference internal" href="../../kotaemon/chatbot/base.html#chatconversation">ChatConversation</a><ul>
+<li class="toctree-l7"><a class="reference internal" href="../../kotaemon/chatbot/base.html#kotaemon.chatbot.base.ChatConversation"><code class="docutils literal notranslate"><span class="pre">ChatConversation</span></code></a><ul>
+<li class="toctree-l8"><a class="reference internal" href="../../kotaemon/chatbot/base.html#kotaemon.chatbot.base.ChatConversation.Config"><code class="docutils literal notranslate"><span class="pre">ChatConversation.Config</span></code></a></li>
+<li class="toctree-l8"><a class="reference internal" href="../../kotaemon/chatbot/base.html#kotaemon.chatbot.base.ChatConversation.bot"><code class="docutils literal notranslate"><span class="pre">ChatConversation.bot</span></code></a></li>
+<li class="toctree-l8"><a class="reference internal" href="../../kotaemon/chatbot/base.html#kotaemon.chatbot.base.ChatConversation.check_end"><code class="docutils literal notranslate"><span class="pre">ChatConversation.check_end()</span></code></a></li>
+<li class="toctree-l8"><a class="reference internal" href="../../kotaemon/chatbot/base.html#kotaemon.chatbot.base.ChatConversation.end_session"><code class="docutils literal notranslate"><span class="pre">ChatConversation.end_session()</span></code></a></li>
+<li class="toctree-l8"><a class="reference internal" href="../../kotaemon/chatbot/base.html#kotaemon.chatbot.base.ChatConversation.history"><code class="docutils literal notranslate"><span class="pre">ChatConversation.history</span></code></a></li>
+<li class="toctree-l8"><a class="reference internal" href="../../kotaemon/chatbot/base.html#kotaemon.chatbot.base.ChatConversation.run"><code class="docutils literal notranslate"><span class="pre">ChatConversation.run()</span></code></a></li>
+<li class="toctree-l8"><a class="reference internal" href="../../kotaemon/chatbot/base.html#kotaemon.chatbot.base.ChatConversation.start_session"><code class="docutils literal notranslate"><span class="pre">ChatConversation.start_session()</span></code></a></li>
+<li class="toctree-l8"><a class="reference internal" href="../../kotaemon/chatbot/base.html#kotaemon.chatbot.base.ChatConversation.system_message"><code class="docutils literal notranslate"><span class="pre">ChatConversation.system_message</span></code></a></li>
+<li class="toctree-l8"><a class="reference internal" href="../../kotaemon/chatbot/base.html#kotaemon.chatbot.base.ChatConversation.terminal_session"><code class="docutils literal notranslate"><span class="pre">ChatConversation.terminal_session()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l5"><a class="reference internal" href="../../kotaemon/chatbot/base.html#functions">Functions</a><ul>
+<li class="toctree-l6"><a class="reference internal" href="../../kotaemon/chatbot/base.html#session-chat-storage">session_chat_storage</a><ul>
+<li class="toctree-l7"><a class="reference internal" href="../../kotaemon/chatbot/base.html#kotaemon.chatbot.base.session_chat_storage"><code class="docutils literal notranslate"><span class="pre">session_chat_storage()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l5"><a class="reference internal" href="../../kotaemon/chatbot/base.html#source-code">Source Code</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="../../kotaemon/chatbot/simple_respondent.html">Simple Respondent</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../kotaemon/chatbot/simple_respondent.html#classes">Classes</a><ul>
+<li class="toctree-l6"><a class="reference internal" href="../../kotaemon/chatbot/simple_respondent.html#simplerespondentchatbot">SimpleRespondentChatbot</a><ul>
+<li class="toctree-l7"><a class="reference internal" href="../../kotaemon/chatbot/simple_respondent.html#kotaemon.chatbot.simple_respondent.SimpleRespondentChatbot"><code class="docutils literal notranslate"><span class="pre">SimpleRespondentChatbot</span></code></a><ul>
+<li class="toctree-l8"><a class="reference internal" href="../../kotaemon/chatbot/simple_respondent.html#kotaemon.chatbot.simple_respondent.SimpleRespondentChatbot.llm"><code class="docutils literal notranslate"><span class="pre">SimpleRespondentChatbot.llm</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l5"><a class="reference internal" href="../../kotaemon/chatbot/simple_respondent.html#source-code">Source Code</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../kotaemon/chatbot/simple_respondent.html#usage">Usage</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="../../kotaemon/chatbot/index.html#exports">Exports</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../kotaemon/chatbot/index.html#examples">Examples</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../kotaemon/contribs/index.html">kotaemon.contribs package</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../kotaemon/contribs/index.html#subpackages">Subpackages</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../kotaemon/contribs/kotaemon.contribs.promptui.html">kotaemon.contribs.promptui package</a><ul>
+<li class="toctree-l6"><a class="reference internal" href="../../kotaemon/contribs/kotaemon.contribs.promptui.html#subpackages">Subpackages</a><ul>
+<li class="toctree-l7"><a class="reference internal" href="../../kotaemon/contribs/kotaemon.contribs.promptui.ui.html">kotaemon.contribs.promptui.ui package</a><ul>
+<li class="toctree-l8"><a class="reference internal" href="../../kotaemon/contribs/kotaemon.contribs.promptui.ui.html#submodules">Submodules</a></li>
+<li class="toctree-l8"><a class="reference internal" href="../../kotaemon/contribs/kotaemon.contribs.promptui.ui.html#module-kotaemon.contribs.promptui.ui.blocks">kotaemon.contribs.promptui.ui.blocks module</a></li>
+<li class="toctree-l8"><a class="reference internal" href="../../kotaemon/contribs/kotaemon.contribs.promptui.ui.html#module-kotaemon.contribs.promptui.ui.chat">kotaemon.contribs.promptui.ui.chat module</a></li>
+<li class="toctree-l8"><a class="reference internal" href="../../kotaemon/contribs/kotaemon.contribs.promptui.ui.html#module-kotaemon.contribs.promptui.ui.pipeline">kotaemon.contribs.promptui.ui.pipeline module</a></li>
+<li class="toctree-l8"><a class="reference internal" href="../../kotaemon/contribs/kotaemon.contribs.promptui.ui.html#module-kotaemon.contribs.promptui.ui">Module contents</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l6"><a class="reference internal" href="../../kotaemon/contribs/kotaemon.contribs.promptui.html#submodules">Submodules</a></li>
+<li class="toctree-l6"><a class="reference internal" href="../../kotaemon/contribs/kotaemon.contribs.promptui.html#module-kotaemon.contribs.promptui.base">kotaemon.contribs.promptui.base module</a></li>
+<li class="toctree-l6"><a class="reference internal" href="../../kotaemon/contribs/kotaemon.contribs.promptui.html#module-kotaemon.contribs.promptui.cli">kotaemon.contribs.promptui.cli module</a></li>
+<li class="toctree-l6"><a class="reference internal" href="../../kotaemon/contribs/kotaemon.contribs.promptui.html#module-kotaemon.contribs.promptui.config">kotaemon.contribs.promptui.config module</a></li>
+<li class="toctree-l6"><a class="reference internal" href="../../kotaemon/contribs/kotaemon.contribs.promptui.html#module-kotaemon.contribs.promptui.export">kotaemon.contribs.promptui.export module</a></li>
+<li class="toctree-l6"><a class="reference internal" href="../../kotaemon/contribs/kotaemon.contribs.promptui.html#module-kotaemon.contribs.promptui.logs">kotaemon.contribs.promptui.logs module</a></li>
+<li class="toctree-l6"><a class="reference internal" href="../../kotaemon/contribs/kotaemon.contribs.promptui.html#module-kotaemon.contribs.promptui.themes">kotaemon.contribs.promptui.themes module</a></li>
+<li class="toctree-l6"><a class="reference internal" href="../../kotaemon/contribs/kotaemon.contribs.promptui.html#module-kotaemon.contribs.promptui.tunnel">kotaemon.contribs.promptui.tunnel module</a></li>
+<li class="toctree-l6"><a class="reference internal" href="../../kotaemon/contribs/kotaemon.contribs.promptui.html#module-kotaemon.contribs.promptui">Module contents</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="../../kotaemon/contribs/index.html#submodules">Submodules</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../kotaemon/contribs/index.html#module-kotaemon.contribs.docs">kotaemon.contribs.docs module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../kotaemon/contribs/index.html#module-kotaemon.contribs">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../kotaemon/embeddings/index.html">Embeddings</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../kotaemon/embeddings/base.html">Base Embeddings</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../kotaemon/embeddings/base.html#overview"><strong>Overview</strong>:</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../kotaemon/embeddings/base.html#classes"><strong>Classes</strong>:</a><ul>
+<li class="toctree-l6"><a class="reference internal" href="../../kotaemon/embeddings/base.html#code-walkthrough"><strong>Code Walkthrough</strong>:</a></li>
+</ul>
+</li>
+<li class="toctree-l5"><a class="reference internal" href="../../kotaemon/embeddings/base.html#use-cases"><strong>Use Cases</strong>:</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="../../kotaemon/embeddings/endpoint_based.html">Endpoint Embeddings</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../kotaemon/embeddings/endpoint_based.html#overview"><strong>Overview</strong>:</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../kotaemon/embeddings/endpoint_based.html#classes"><strong>Classes</strong>:</a><ul>
+<li class="toctree-l6"><a class="reference internal" href="../../kotaemon/embeddings/endpoint_based.html#code-walkthrough"><strong>Code Walkthrough</strong>:</a></li>
+</ul>
+</li>
+<li class="toctree-l5"><a class="reference internal" href="../../kotaemon/embeddings/endpoint_based.html#use-cases"><strong>Use Cases</strong>:</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../kotaemon/embeddings/endpoint_based.html#integration-notes"><strong>Integration Notes</strong>:</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="../../kotaemon/embeddings/fastembed.html">FastEmbed Embeddings</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../kotaemon/embeddings/fastembed.html#overview"><strong>Overview</strong>:</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../kotaemon/embeddings/fastembed.html#classes"><strong>Classes</strong>:</a><ul>
+<li class="toctree-l6"><a class="reference internal" href="../../kotaemon/embeddings/fastembed.html#code-walkthrough"><strong>Code Walkthrough</strong>:</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="../../kotaemon/embeddings/langchain_based.html">Langchain-Based Embeddings</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../kotaemon/embeddings/langchain_based.html#overview"><strong>Overview</strong>:</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../kotaemon/embeddings/langchain_based.html#classes"><strong>Classes</strong>:</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../kotaemon/embeddings/langchain_based.html#code-walkthrough"><strong>Code Walkthrough</strong>:</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="../../kotaemon/embeddings/openai.html">OpenAI-Based Embeddings</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../kotaemon/embeddings/openai.html#overview"><strong>Overview</strong>:</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../kotaemon/embeddings/openai.html#classes"><strong>Classes</strong>:</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../kotaemon/embeddings/openai.html#utilities"><strong>Utilities</strong>:</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../kotaemon/embeddings/openai.html#code-walkthrough"><strong>Code Walkthrough</strong>:</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="../../kotaemon/embeddings/tei_endpoint_embed.html">TEI Endpoint-Based Embeddings</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../kotaemon/embeddings/tei_endpoint_embed.html#overview"><strong>Overview</strong>:</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../kotaemon/embeddings/tei_endpoint_embed.html#classes"><strong>Classes</strong>:</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../kotaemon/embeddings/tei_endpoint_embed.html#code-walkthrough"><strong>Code Walkthrough</strong>:</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../kotaemon/indices/index.html">Indices</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../kotaemon/indices/index.html#contents">Contents</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../kotaemon/indices/base.html">Base Module</a><ul>
+<li class="toctree-l6"><a class="reference internal" href="../../kotaemon/indices/base.html#purpose">Purpose</a></li>
+<li class="toctree-l6"><a class="reference internal" href="../../kotaemon/indices/base.html#classes-and-mixins">Classes and Mixins</a></li>
+</ul>
+</li>
+<li class="toctree-l5"><a class="reference internal" href="../../kotaemon/indices/vectorindex.html">Vector Indexing</a><ul>
+<li class="toctree-l6"><a class="reference internal" href="../../kotaemon/indices/vectorindex.html#classes">Classes</a></li>
+</ul>
+</li>
+<li class="toctree-l5"><a class="reference internal" href="../../kotaemon/indices/extractors/index.html">Extractors</a><ul>
+<li class="toctree-l6"><a class="reference internal" href="../../kotaemon/indices/extractors/doc_parsers.html">doc_parsers Module</a><ul>
+<li class="toctree-l7"><a class="reference internal" href="../../kotaemon/indices/extractors/doc_parsers.html#classes">Classes</a><ul>
+<li class="toctree-l8"><a class="reference internal" href="../../kotaemon/indices/extractors/doc_parsers.html#basedocparser">BaseDocParser</a></li>
+<li class="toctree-l8"><a class="reference internal" href="../../kotaemon/indices/extractors/doc_parsers.html#titleextractor">TitleExtractor</a></li>
+<li class="toctree-l8"><a class="reference internal" href="../../kotaemon/indices/extractors/doc_parsers.html#summaryextractor">SummaryExtractor</a></li>
+</ul>
+</li>
+<li class="toctree-l7"><a class="reference internal" href="../../kotaemon/indices/extractors/doc_parsers.html#source-code">Source Code</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l5"><a class="reference internal" href="../../kotaemon/indices/ingests/index.html">Ingests</a><ul>
+<li class="toctree-l6"><a class="reference internal" href="../../kotaemon/indices/ingests/index.html#submodules">Submodules</a><ul>
+<li class="toctree-l7"><a class="reference internal" href="../../kotaemon/indices/ingests/files.html">Files Module</a><ul>
+<li class="toctree-l8"><a class="reference internal" href="../../kotaemon/indices/ingests/files.html#classes">Classes</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l6"><a class="reference internal" href="../../kotaemon/indices/ingests/index.html#overview">Overview</a></li>
+<li class="toctree-l6"><a class="reference internal" href="../../kotaemon/indices/ingests/index.html#features">Features</a></li>
+<li class="toctree-l6"><a class="reference internal" href="../../kotaemon/indices/ingests/index.html#module-structure">Module Structure</a></li>
+</ul>
+</li>
+<li class="toctree-l5"><a class="reference internal" href="../../kotaemon/indices/qa/index.html">qa</a><ul>
+<li class="toctree-l6"><a class="reference internal" href="../../kotaemon/indices/qa/citation.html"><cite>citation</cite></a><ul>
+<li class="toctree-l7"><a class="reference internal" href="../../kotaemon/indices/qa/citation.html#overview">Overview</a></li>
+<li class="toctree-l7"><a class="reference internal" href="../../kotaemon/indices/qa/citation.html#classes">Classes</a></li>
+<li class="toctree-l7"><a class="reference internal" href="../../kotaemon/indices/qa/citation.html#features">Features</a></li>
+<li class="toctree-l7"><a class="reference internal" href="../../kotaemon/indices/qa/citation.html#example">Example</a></li>
+</ul>
+</li>
+<li class="toctree-l6"><a class="reference internal" href="../../kotaemon/indices/qa/citation_qa.html"><cite>citation_qa</cite></a><ul>
+<li class="toctree-l7"><a class="reference internal" href="../../kotaemon/indices/qa/citation_qa.html#overview">Overview</a></li>
+<li class="toctree-l7"><a class="reference internal" href="../../kotaemon/indices/qa/citation_qa.html#classes">Classes</a></li>
+<li class="toctree-l7"><a class="reference internal" href="../../kotaemon/indices/qa/citation_qa.html#constants">Constants</a></li>
+<li class="toctree-l7"><a class="reference internal" href="../../kotaemon/indices/qa/citation_qa.html#features">Features</a></li>
+<li class="toctree-l7"><a class="reference internal" href="../../kotaemon/indices/qa/citation_qa.html#source-code">Source Code</a></li>
+</ul>
+</li>
+<li class="toctree-l6"><a class="reference internal" href="../../kotaemon/indices/qa/citation_qa_inline.html"><cite>citation_qa_inline</cite></a><ul>
+<li class="toctree-l7"><a class="reference internal" href="../../kotaemon/indices/qa/citation_qa_inline.html#features">Features</a></li>
+<li class="toctree-l7"><a class="reference internal" href="../../kotaemon/indices/qa/citation_qa_inline.html#classes">Classes</a></li>
+<li class="toctree-l7"><a class="reference internal" href="../../kotaemon/indices/qa/citation_qa_inline.html#constants">Constants</a></li>
+<li class="toctree-l7"><a class="reference internal" href="../../kotaemon/indices/qa/citation_qa_inline.html#source-code">Source Code</a></li>
+</ul>
+</li>
+<li class="toctree-l6"><a class="reference internal" href="../../kotaemon/indices/qa/format_context.html"><cite>format_context</cite></a><ul>
+<li class="toctree-l7"><a class="reference internal" href="../../kotaemon/indices/qa/format_context.html#overview">Overview</a></li>
+<li class="toctree-l7"><a class="reference internal" href="../../kotaemon/indices/qa/format_context.html#constants">Constants</a></li>
+<li class="toctree-l7"><a class="reference internal" href="../../kotaemon/indices/qa/format_context.html#classes">Classes</a></li>
+<li class="toctree-l7"><a class="reference internal" href="../../kotaemon/indices/qa/format_context.html#example-usage">Example Usage</a></li>
+</ul>
+</li>
+<li class="toctree-l6"><a class="reference internal" href="../../kotaemon/indices/qa/utils.html"><cite>utils.py</cite> - Utility Methods</a><ul>
+<li class="toctree-l7"><a class="reference internal" href="../../kotaemon/indices/qa/utils.html#functions">Functions</a><ul>
+<li class="toctree-l8"><a class="reference internal" href="../../kotaemon/indices/qa/utils.html#find-text"><cite>find_text</cite></a></li>
+<li class="toctree-l8"><a class="reference internal" href="../../kotaemon/indices/qa/utils.html#find-start-end-phrase"><cite>find_start_end_phrase</cite></a></li>
+</ul>
+</li>
+<li class="toctree-l7"><a class="reference internal" href="../../kotaemon/indices/qa/utils.html#source-code">Source Code</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l5"><a class="reference internal" href="../../kotaemon/indices/rankings/index.html">Rankings</a><ul>
+<li class="toctree-l6"><a class="reference internal" href="../../kotaemon/indices/rankings/index.html#contents">Contents</a><ul>
+<li class="toctree-l7"><a class="reference internal" href="../../kotaemon/indices/rankings/base.html">Base Module</a><ul>
+<li class="toctree-l8"><a class="reference internal" href="../../kotaemon/indices/rankings/base.html#key-class">Key Class</a></li>
+<li class="toctree-l8"><a class="reference internal" href="../../kotaemon/indices/rankings/base.html#source-code">Source Code</a></li>
+</ul>
+</li>
+<li class="toctree-l7"><a class="reference internal" href="../../kotaemon/indices/rankings/cohere.html">Cohere Module</a><ul>
+<li class="toctree-l8"><a class="reference internal" href="../../kotaemon/indices/rankings/cohere.html#key-class">Key Class</a></li>
+<li class="toctree-l8"><a class="reference internal" href="../../kotaemon/indices/rankings/cohere.html#source-code">Source Code</a></li>
+</ul>
+</li>
+<li class="toctree-l7"><a class="reference internal" href="../../kotaemon/indices/rankings/llm.html">LLM Reranking Module</a><ul>
+<li class="toctree-l8"><a class="reference internal" href="../../kotaemon/indices/rankings/llm.html#key-class">Key Class</a></li>
+<li class="toctree-l8"><a class="reference internal" href="../../kotaemon/indices/rankings/llm.html#source-code">Source Code</a></li>
+</ul>
+</li>
+<li class="toctree-l7"><a class="reference internal" href="../../kotaemon/indices/rankings/llm_scoring.html">LLM Scoring Module</a><ul>
+<li class="toctree-l8"><a class="reference internal" href="../../kotaemon/indices/rankings/llm_scoring.html#key-class">Key Class</a></li>
+<li class="toctree-l8"><a class="reference internal" href="../../kotaemon/indices/rankings/llm_scoring.html#source-code">Source Code</a></li>
+</ul>
+</li>
+<li class="toctree-l7"><a class="reference internal" href="../../kotaemon/indices/rankings/llm_trulens.html">LLM Trulens Scoring Module</a><ul>
+<li class="toctree-l8"><a class="reference internal" href="../../kotaemon/indices/rankings/llm_trulens.html#key-class">Key Class</a></li>
+<li class="toctree-l8"><a class="reference internal" href="../../kotaemon/indices/rankings/llm_trulens.html#source-code">Source Code</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l6"><a class="reference internal" href="../../kotaemon/indices/rankings/index.html#exports">Exports</a></li>
+<li class="toctree-l6"><a class="reference internal" href="../../kotaemon/indices/rankings/index.html#source-code">Source Code</a></li>
+</ul>
+</li>
+<li class="toctree-l5"><a class="reference internal" href="../../kotaemon/indices/retrievers/index.html">Retrievers</a><ul>
+<li class="toctree-l6"><a class="reference internal" href="../../kotaemon/indices/retrievers/index.html#modules">Modules</a><ul>
+<li class="toctree-l7"><a class="reference internal" href="../../kotaemon/indices/retrievers/jina_web_search.html">Jina Web Search</a><ul>
+<li class="toctree-l8"><a class="reference internal" href="../../kotaemon/indices/retrievers/jina_web_search.html#class-overview">Class Overview</a></li>
+<li class="toctree-l8"><a class="reference internal" href="../../kotaemon/indices/retrievers/jina_web_search.html#code-example">Code Example</a></li>
+</ul>
+</li>
+<li class="toctree-l7"><a class="reference internal" href="../../kotaemon/indices/retrievers/tavily_web_search.html">Tavily Web Search</a><ul>
+<li class="toctree-l8"><a class="reference internal" href="../../kotaemon/indices/retrievers/tavily_web_search.html#class-overview">Class Overview</a></li>
+<li class="toctree-l8"><a class="reference internal" href="../../kotaemon/indices/retrievers/tavily_web_search.html#code-example">Code Example</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l6"><a class="reference internal" href="../../kotaemon/indices/retrievers/index.html#usage">Usage</a></li>
+</ul>
+</li>
+<li class="toctree-l5"><a class="reference internal" href="../../kotaemon/indices/splitters/index.html">Splitters</a><ul>
+<li class="toctree-l6"><a class="reference internal" href="../../kotaemon/indices/splitters/index.html#classes">Classes</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="../../kotaemon/indices/index.html#key-components">Key Components</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../kotaemon/indices/index.html#submodules-overview">Submodules Overview</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../kotaemon/llms/index.html">llms</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../kotaemon/llms/base.html">Base Module</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../kotaemon/llms/base.html#overview">Overview</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../kotaemon/llms/base.html#classes">Classes</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../kotaemon/llms/base.html#source-code">Source Code</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="../../kotaemon/llms/branching.html">Branching Pipelines</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../kotaemon/llms/branching.html#module-contents">Module Contents</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../kotaemon/llms/branching.html#classes">Classes</a><ul>
+<li class="toctree-l6"><a class="reference internal" href="../../kotaemon/llms/branching.html#simplebranchingpipeline">SimpleBranchingPipeline</a></li>
+<li class="toctree-l6"><a class="reference internal" href="../../kotaemon/llms/branching.html#gatedbranchingpipeline">GatedBranchingPipeline</a></li>
+</ul>
+</li>
+<li class="toctree-l5"><a class="reference internal" href="../../kotaemon/llms/branching.html#source-code">Source Code</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="../../kotaemon/llms/cot.html">Chain of Thought (cot.py)</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../kotaemon/llms/cot.html#classes">Classes</a><ul>
+<li class="toctree-l6"><a class="reference internal" href="../../kotaemon/llms/cot.html#thought">Thought</a></li>
+<li class="toctree-l6"><a class="reference internal" href="../../kotaemon/llms/cot.html#manualsequentialchainofthought">ManualSequentialChainOfThought</a></li>
+</ul>
+</li>
+<li class="toctree-l5"><a class="reference internal" href="../../kotaemon/llms/cot.html#source-code">Source Code</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="../../kotaemon/llms/linear.html">Linear Pipelines</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../kotaemon/llms/linear.html#classes">Classes</a><ul>
+<li class="toctree-l6"><a class="reference internal" href="../../kotaemon/llms/linear.html#simplelinearpipeline">SimpleLinearPipeline</a></li>
+<li class="toctree-l6"><a class="reference internal" href="../../kotaemon/llms/linear.html#gatedlinearpipeline">GatedLinearPipeline</a></li>
+</ul>
+</li>
+<li class="toctree-l5"><a class="reference internal" href="../../kotaemon/llms/linear.html#source-code">Source Code</a><ul>
+<li class="toctree-l6"><a class="reference internal" href="../../kotaemon/llms/linear.html#id1">SimpleLinearPipeline</a></li>
+<li class="toctree-l6"><a class="reference internal" href="../../kotaemon/llms/linear.html#id2">GatedLinearPipeline</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="../../kotaemon/llms/chats/index.html">Chats Module</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../kotaemon/llms/chats/index.html#contents">Contents:</a><ul>
+<li class="toctree-l6"><a class="reference internal" href="../../kotaemon/llms/chats/base.html">Base Chat Module</a><ul>
+<li class="toctree-l7"><a class="reference internal" href="../../kotaemon/llms/chats/base.html#class-overview">Class Overview</a><ul>
+<li class="toctree-l8"><a class="reference internal" href="../../kotaemon/llms/chats/base.html#chatllm"><cite>ChatLLM</cite></a></li>
+</ul>
+</li>
+<li class="toctree-l7"><a class="reference internal" href="../../kotaemon/llms/chats/base.html#details">Details</a></li>
+<li class="toctree-l7"><a class="reference internal" href="../../kotaemon/llms/chats/base.html#source-code">Source Code</a></li>
+</ul>
+</li>
+<li class="toctree-l6"><a class="reference internal" href="../../kotaemon/llms/chats/endpoint_based.html">Endpoint Chat Module</a><ul>
+<li class="toctree-l7"><a class="reference internal" href="../../kotaemon/llms/chats/endpoint_based.html#class-overview">Class Overview</a><ul>
+<li class="toctree-l8"><a class="reference internal" href="../../kotaemon/llms/chats/endpoint_based.html#endpointchatllm"><cite>EndpointChatLLM</cite></a></li>
+</ul>
+</li>
+<li class="toctree-l7"><a class="reference internal" href="../../kotaemon/llms/chats/endpoint_based.html#details">Details</a></li>
+<li class="toctree-l7"><a class="reference internal" href="../../kotaemon/llms/chats/endpoint_based.html#source-code">Source Code</a></li>
+</ul>
+</li>
+<li class="toctree-l6"><a class="reference internal" href="../../kotaemon/llms/chats/langchain_based.html">LangChain-Based Chat Module</a><ul>
+<li class="toctree-l7"><a class="reference internal" href="../../kotaemon/llms/chats/langchain_based.html#mixin-overview">Mixin Overview</a><ul>
+<li class="toctree-l8"><a class="reference internal" href="../../kotaemon/llms/chats/langchain_based.html#lcchatmixin"><cite>LCChatMixin</cite></a></li>
+</ul>
+</li>
+<li class="toctree-l7"><a class="reference internal" href="../../kotaemon/llms/chats/langchain_based.html#class-overview">Class Overview</a><ul>
+<li class="toctree-l8"><a class="reference internal" href="../../kotaemon/llms/chats/langchain_based.html#lcchatopenai"><cite>LCChatOpenAI</cite></a></li>
+<li class="toctree-l8"><a class="reference internal" href="../../kotaemon/llms/chats/langchain_based.html#lcazurechatopenai"><cite>LCAzureChatOpenAI</cite></a></li>
+<li class="toctree-l8"><a class="reference internal" href="../../kotaemon/llms/chats/langchain_based.html#lcanthropicchat"><cite>LCAnthropicChat</cite></a></li>
+<li class="toctree-l8"><a class="reference internal" href="../../kotaemon/llms/chats/langchain_based.html#lcgeminichat"><cite>LCGeminiChat</cite></a></li>
+<li class="toctree-l8"><a class="reference internal" href="../../kotaemon/llms/chats/langchain_based.html#lccoherechat"><cite>LCCohereChat</cite></a></li>
+</ul>
+</li>
+<li class="toctree-l7"><a class="reference internal" href="../../kotaemon/llms/chats/langchain_based.html#details">Details</a></li>
+<li class="toctree-l7"><a class="reference internal" href="../../kotaemon/llms/chats/langchain_based.html#source-code">Source Code</a></li>
+</ul>
+</li>
+<li class="toctree-l6"><a class="reference internal" href="../../kotaemon/llms/chats/llamacpp.html">LlamaCpp Chat Module</a><ul>
+<li class="toctree-l7"><a class="reference internal" href="../../kotaemon/llms/chats/llamacpp.html#class-overview">Class Overview</a><ul>
+<li class="toctree-l8"><a class="reference internal" href="../../kotaemon/llms/chats/llamacpp.html#llamacppchat"><cite>LlamaCppChat</cite></a></li>
+</ul>
+</li>
+<li class="toctree-l7"><a class="reference internal" href="../../kotaemon/llms/chats/llamacpp.html#details">Details</a></li>
+<li class="toctree-l7"><a class="reference internal" href="../../kotaemon/llms/chats/llamacpp.html#source-code">Source Code</a></li>
+</ul>
+</li>
+<li class="toctree-l6"><a class="reference internal" href="../../kotaemon/llms/chats/openai.html">OpenAI Chat Module</a><ul>
+<li class="toctree-l7"><a class="reference internal" href="../../kotaemon/llms/chats/openai.html#class-overview">Class Overview</a><ul>
+<li class="toctree-l8"><a class="reference internal" href="../../kotaemon/llms/chats/openai.html#basechatopenai"><cite>BaseChatOpenAI</cite></a></li>
+<li class="toctree-l8"><a class="reference internal" href="../../kotaemon/llms/chats/openai.html#chatopenai"><cite>ChatOpenAI</cite></a></li>
+<li class="toctree-l8"><a class="reference internal" href="../../kotaemon/llms/chats/openai.html#azurechatopenai"><cite>AzureChatOpenAI</cite></a></li>
+</ul>
+</li>
+<li class="toctree-l7"><a class="reference internal" href="../../kotaemon/llms/chats/openai.html#details">Details</a></li>
+<li class="toctree-l7"><a class="reference internal" href="../../kotaemon/llms/chats/openai.html#source-code">Source Code</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l5"><a class="reference internal" href="../../kotaemon/llms/chats/index.html#module-overview">Module Overview</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../kotaemon/llms/chats/index.html#source-code">Source Code</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="../../kotaemon/llms/completions/index.html">Completions Module</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../kotaemon/llms/completions/index.html#contents">Contents:</a><ul>
+<li class="toctree-l6"><a class="reference internal" href="../../kotaemon/llms/completions/langchain_based.html">LangChain-Based Completion Module</a><ul>
+<li class="toctree-l7"><a class="reference internal" href="../../kotaemon/llms/completions/langchain_based.html#mixin-overview">Mixin Overview</a><ul>
+<li class="toctree-l8"><a class="reference internal" href="../../kotaemon/llms/completions/langchain_based.html#lccompletionmixin"><cite>LCCompletionMixin</cite></a></li>
+</ul>
+</li>
+<li class="toctree-l7"><a class="reference internal" href="../../kotaemon/llms/completions/langchain_based.html#class-overview">Class Overview</a><ul>
+<li class="toctree-l8"><a class="reference internal" href="../../kotaemon/llms/completions/langchain_based.html#openai"><cite>OpenAI</cite></a></li>
+<li class="toctree-l8"><a class="reference internal" href="../../kotaemon/llms/completions/langchain_based.html#azureopenai"><cite>AzureOpenAI</cite></a></li>
+<li class="toctree-l8"><a class="reference internal" href="../../kotaemon/llms/completions/langchain_based.html#llamacpp"><cite>LlamaCpp</cite></a></li>
+</ul>
+</li>
+<li class="toctree-l7"><a class="reference internal" href="../../kotaemon/llms/completions/langchain_based.html#details">Details</a></li>
+<li class="toctree-l7"><a class="reference internal" href="../../kotaemon/llms/completions/langchain_based.html#source-code">Source Code</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l5"><a class="reference internal" href="../../kotaemon/llms/completions/index.html#module-overview">Module Overview</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../kotaemon/llms/completions/index.html#source-code">Source Code</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="../../kotaemon/llms/prompts/index.html">Prompts Module</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../kotaemon/llms/prompts/index.html#contents">Contents:</a><ul>
+<li class="toctree-l6"><a class="reference internal" href="../../kotaemon/llms/prompts/base.html">Base Prompt Module</a><ul>
+<li class="toctree-l7"><a class="reference internal" href="../../kotaemon/llms/prompts/base.html#class-overview">Class Overview</a><ul>
+<li class="toctree-l8"><a class="reference internal" href="../../kotaemon/llms/prompts/base.html#basepromptcomponent"><cite>BasePromptComponent</cite></a></li>
+</ul>
+</li>
+<li class="toctree-l7"><a class="reference internal" href="../../kotaemon/llms/prompts/base.html#details">Details</a></li>
+<li class="toctree-l7"><a class="reference internal" href="../../kotaemon/llms/prompts/base.html#source-code">Source Code</a></li>
+</ul>
+</li>
+<li class="toctree-l6"><a class="reference internal" href="../../kotaemon/llms/prompts/template.html">Prompt Template Module</a><ul>
+<li class="toctree-l7"><a class="reference internal" href="../../kotaemon/llms/prompts/template.html#class-overview">Class Overview</a><ul>
+<li class="toctree-l8"><a class="reference internal" href="../../kotaemon/llms/prompts/template.html#prompttemplate"><cite>PromptTemplate</cite></a></li>
+</ul>
+</li>
+<li class="toctree-l7"><a class="reference internal" href="../../kotaemon/llms/prompts/template.html#details">Details</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l5"><a class="reference internal" href="../../kotaemon/llms/prompts/index.html#module-overview">Module Overview</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../kotaemon/llms/prompts/index.html#source-code">Source Code</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="../../kotaemon/llms/index.html#modules">Modules</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../kotaemon/llms/index.html#subfolders">Subfolders</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../kotaemon/llms/index.html#source-code">Source Code</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../kotaemon/loaders/index.html">kotaemon.loaders package</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../kotaemon/loaders/index.html#subpackages">Subpackages</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../kotaemon/loaders/kotaemon.loaders.utils.html">kotaemon.loaders.utils package</a><ul>
+<li class="toctree-l6"><a class="reference internal" href="../../kotaemon/loaders/kotaemon.loaders.utils.html#submodules">Submodules</a></li>
+<li class="toctree-l6"><a class="reference internal" href="../../kotaemon/loaders/kotaemon.loaders.utils.html#module-kotaemon.loaders.utils.adobe">kotaemon.loaders.utils.adobe module</a></li>
+<li class="toctree-l6"><a class="reference internal" href="../../kotaemon/loaders/kotaemon.loaders.utils.html#module-kotaemon.loaders.utils.box">kotaemon.loaders.utils.box module</a></li>
+<li class="toctree-l6"><a class="reference internal" href="../../kotaemon/loaders/kotaemon.loaders.utils.html#module-kotaemon.loaders.utils.gpt4v">kotaemon.loaders.utils.gpt4v module</a></li>
+<li class="toctree-l6"><a class="reference internal" href="../../kotaemon/loaders/kotaemon.loaders.utils.html#module-kotaemon.loaders.utils.pdf_ocr">kotaemon.loaders.utils.pdf_ocr module</a></li>
+<li class="toctree-l6"><a class="reference internal" href="../../kotaemon/loaders/kotaemon.loaders.utils.html#module-kotaemon.loaders.utils.table">kotaemon.loaders.utils.table module</a></li>
+<li class="toctree-l6"><a class="reference internal" href="../../kotaemon/loaders/kotaemon.loaders.utils.html#module-kotaemon.loaders.utils">Module contents</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="../../kotaemon/loaders/index.html#submodules">Submodules</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../kotaemon/loaders/index.html#module-kotaemon.loaders.adobe_loader">kotaemon.loaders.adobe_loader module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../kotaemon/loaders/index.html#module-kotaemon.loaders.azureai_document_intelligence_loader">kotaemon.loaders.azureai_document_intelligence_loader module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../kotaemon/loaders/index.html#module-kotaemon.loaders.base">kotaemon.loaders.base module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../kotaemon/loaders/index.html#module-kotaemon.loaders.composite_loader">kotaemon.loaders.composite_loader module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../kotaemon/loaders/index.html#module-kotaemon.loaders.docling_loader">kotaemon.loaders.docling_loader module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../kotaemon/loaders/index.html#module-kotaemon.loaders.docx_loader">kotaemon.loaders.docx_loader module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../kotaemon/loaders/index.html#module-kotaemon.loaders.excel_loader">kotaemon.loaders.excel_loader module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../kotaemon/loaders/index.html#module-kotaemon.loaders.html_loader">kotaemon.loaders.html_loader module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../kotaemon/loaders/index.html#module-kotaemon.loaders.mathpix_loader">kotaemon.loaders.mathpix_loader module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../kotaemon/loaders/index.html#module-kotaemon.loaders.ocr_loader">kotaemon.loaders.ocr_loader module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../kotaemon/loaders/index.html#module-kotaemon.loaders.pdf_loader">kotaemon.loaders.pdf_loader module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../kotaemon/loaders/index.html#module-kotaemon.loaders.txt_loader">kotaemon.loaders.txt_loader module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../kotaemon/loaders/index.html#module-kotaemon.loaders.unstructured_loader">kotaemon.loaders.unstructured_loader module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../kotaemon/loaders/index.html#module-kotaemon.loaders.web_loader">kotaemon.loaders.web_loader module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../kotaemon/loaders/index.html#module-kotaemon.loaders">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../kotaemon/parsers/index.html">kotaemon.parsers package</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../kotaemon/parsers/index.html#submodules">Submodules</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../kotaemon/parsers/index.html#module-kotaemon.parsers.regex_extractor">kotaemon.parsers.regex_extractor module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../kotaemon/parsers/index.html#module-kotaemon.parsers">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../kotaemon/rerankings/index.html">Rerankings</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../kotaemon/rerankings/index.html#contents">Contents:</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../kotaemon/rerankings/base.html">Base Reranking Module</a><ul>
+<li class="toctree-l6"><a class="reference internal" href="../../kotaemon/rerankings/base.html#class-overview">Class Overview</a><ul>
+<li class="toctree-l7"><a class="reference internal" href="../../kotaemon/rerankings/base.html#basereranking"><cite>BaseReranking</cite></a></li>
+</ul>
+</li>
+<li class="toctree-l6"><a class="reference internal" href="../../kotaemon/rerankings/base.html#details">Details</a></li>
+</ul>
+</li>
+<li class="toctree-l5"><a class="reference internal" href="../../kotaemon/rerankings/cohere.html">Cohere Reranking Module</a><ul>
+<li class="toctree-l6"><a class="reference internal" href="../../kotaemon/rerankings/cohere.html#class-overview">Class Overview</a><ul>
+<li class="toctree-l7"><a class="reference internal" href="../../kotaemon/rerankings/cohere.html#coherereranking"><cite>CohereReranking</cite></a></li>
+</ul>
+</li>
+<li class="toctree-l6"><a class="reference internal" href="../../kotaemon/rerankings/cohere.html#details">Details</a></li>
+</ul>
+</li>
+<li class="toctree-l5"><a class="reference internal" href="../../kotaemon/rerankings/tei_fast_rerank.html">TEI Fast Reranking Module</a><ul>
+<li class="toctree-l6"><a class="reference internal" href="../../kotaemon/rerankings/tei_fast_rerank.html#class-overview">Class Overview</a><ul>
+<li class="toctree-l7"><a class="reference internal" href="../../kotaemon/rerankings/tei_fast_rerank.html#teifastreranking"><cite>TeiFastReranking</cite></a></li>
+</ul>
+</li>
+<li class="toctree-l6"><a class="reference internal" href="../../kotaemon/rerankings/tei_fast_rerank.html#details">Details</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="../../kotaemon/rerankings/index.html#module-overview">Module Overview</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../kotaemon/storages/index.html">Storages</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../kotaemon/storages/index.html#contents">Contents:</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../kotaemon/storages/docstores/index.html">Docstores Module</a><ul>
+<li class="toctree-l6"><a class="reference internal" href="../../kotaemon/storages/docstores/index.html#contents">Contents:</a><ul>
+<li class="toctree-l7"><a class="reference internal" href="../../kotaemon/storages/docstores/base.html">Base Document Store Module</a><ul>
+<li class="toctree-l8"><a class="reference internal" href="../../kotaemon/storages/docstores/base.html#class-overview">Class Overview</a></li>
+<li class="toctree-l8"><a class="reference internal" href="../../kotaemon/storages/docstores/base.html#details">Details</a></li>
+</ul>
+</li>
+<li class="toctree-l7"><a class="reference internal" href="../../kotaemon/storages/docstores/elasticsearch.html">Elasticsearch Document Store</a><ul>
+<li class="toctree-l8"><a class="reference internal" href="../../kotaemon/storages/docstores/elasticsearch.html#class-overview">Class Overview</a></li>
+<li class="toctree-l8"><a class="reference internal" href="../../kotaemon/storages/docstores/elasticsearch.html#details">Details</a></li>
+</ul>
+</li>
+<li class="toctree-l7"><a class="reference internal" href="../../kotaemon/storages/docstores/in_memory.html">In-Memory Document Store</a><ul>
+<li class="toctree-l8"><a class="reference internal" href="../../kotaemon/storages/docstores/in_memory.html#class-overview">Class Overview</a></li>
+<li class="toctree-l8"><a class="reference internal" href="../../kotaemon/storages/docstores/in_memory.html#details">Details</a></li>
+</ul>
+</li>
+<li class="toctree-l7"><a class="reference internal" href="../../kotaemon/storages/docstores/lancedb.html">LanceDB Document Store</a><ul>
+<li class="toctree-l8"><a class="reference internal" href="../../kotaemon/storages/docstores/lancedb.html#class-overview">Class Overview</a></li>
+<li class="toctree-l8"><a class="reference internal" href="../../kotaemon/storages/docstores/lancedb.html#details">Details</a></li>
+</ul>
+</li>
+<li class="toctree-l7"><a class="reference internal" href="../../kotaemon/storages/docstores/simple_file.html">Simple File Document Store</a><ul>
+<li class="toctree-l8"><a class="reference internal" href="../../kotaemon/storages/docstores/simple_file.html#class-overview">Class Overview</a></li>
+<li class="toctree-l8"><a class="reference internal" href="../../kotaemon/storages/docstores/simple_file.html#details">Details</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l6"><a class="reference internal" href="../../kotaemon/storages/docstores/index.html#module-overview">Module Overview</a></li>
+</ul>
+</li>
+<li class="toctree-l5"><a class="reference internal" href="../../kotaemon/storages/vectorstores/index.html">Vectorstores Module</a><ul>
+<li class="toctree-l6"><a class="reference internal" href="../../kotaemon/storages/vectorstores/index.html#contents">Contents:</a><ul>
+<li class="toctree-l7"><a class="reference internal" href="../../kotaemon/storages/vectorstores/base.html">Base Vector Store Module</a><ul>
+<li class="toctree-l8"><a class="reference internal" href="../../kotaemon/storages/vectorstores/base.html#class-overview">Class Overview</a></li>
+<li class="toctree-l8"><a class="reference internal" href="../../kotaemon/storages/vectorstores/base.html#details">Details</a></li>
+</ul>
+</li>
+<li class="toctree-l7"><a class="reference internal" href="../../kotaemon/storages/vectorstores/chroma.html">Chroma Vector Store</a><ul>
+<li class="toctree-l8"><a class="reference internal" href="../../kotaemon/storages/vectorstores/chroma.html#class-overview">Class Overview</a></li>
+<li class="toctree-l8"><a class="reference internal" href="../../kotaemon/storages/vectorstores/chroma.html#details">Details</a></li>
+</ul>
+</li>
+<li class="toctree-l7"><a class="reference internal" href="../../kotaemon/storages/vectorstores/in_memory.html">In-Memory Vector Store</a><ul>
+<li class="toctree-l8"><a class="reference internal" href="../../kotaemon/storages/vectorstores/in_memory.html#class-overview">Class Overview</a></li>
+<li class="toctree-l8"><a class="reference internal" href="../../kotaemon/storages/vectorstores/in_memory.html#details">Details</a></li>
+</ul>
+</li>
+<li class="toctree-l7"><a class="reference internal" href="../../kotaemon/storages/vectorstores/lancedb.html">LanceDB Vector Store</a><ul>
+<li class="toctree-l8"><a class="reference internal" href="../../kotaemon/storages/vectorstores/lancedb.html#class-overview">Class Overview</a></li>
+<li class="toctree-l8"><a class="reference internal" href="../../kotaemon/storages/vectorstores/lancedb.html#details">Details</a></li>
+</ul>
+</li>
+<li class="toctree-l7"><a class="reference internal" href="../../kotaemon/storages/vectorstores/milvus.html">Milvus Vector Store</a><ul>
+<li class="toctree-l8"><a class="reference internal" href="../../kotaemon/storages/vectorstores/milvus.html#class-overview">Class Overview</a></li>
+<li class="toctree-l8"><a class="reference internal" href="../../kotaemon/storages/vectorstores/milvus.html#details">Details</a></li>
+</ul>
+</li>
+<li class="toctree-l7"><a class="reference internal" href="../../kotaemon/storages/vectorstores/qdrant.html">Qdrant Vector Store</a><ul>
+<li class="toctree-l8"><a class="reference internal" href="../../kotaemon/storages/vectorstores/qdrant.html#class-overview">Class Overview</a></li>
+<li class="toctree-l8"><a class="reference internal" href="../../kotaemon/storages/vectorstores/qdrant.html#details">Details</a></li>
+</ul>
+</li>
+<li class="toctree-l7"><a class="reference internal" href="../../kotaemon/storages/vectorstores/simple_file.html">Simple File Vector Store</a><ul>
+<li class="toctree-l8"><a class="reference internal" href="../../kotaemon/storages/vectorstores/simple_file.html#class-overview">Class Overview</a></li>
+<li class="toctree-l8"><a class="reference internal" href="../../kotaemon/storages/vectorstores/simple_file.html#details">Details</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l6"><a class="reference internal" href="../../kotaemon/storages/vectorstores/index.html#module-overview">Module Overview</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="../../kotaemon/storages/index.html#module-overview">Module Overview</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../index.html">ktem package</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../index.html#subpackages">Subpackages</a><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../index.html#submodules">Submodules</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../index.html#module-ktem.app">ktem.app module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../index.html#module-ktem.components">ktem.components module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../index.html#module-ktem.exceptions">ktem.exceptions module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../index.html#module-ktem.extension_protocol">ktem.extension_protocol module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../index.html#module-ktem.main">ktem.main module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../index.html#module-ktem.settings">ktem.settings module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../index.html#module-ktem">Module contents</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../tests.html">tests package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../tests.html#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../tests.html#tests-conftest-module">tests.conftest module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../tests.html#tests-simple-pipeline-module">tests.simple_pipeline module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../tests.html#tests-test-agent-module">tests.test_agent module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../tests.html#tests-test-composite-module">tests.test_composite module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../tests.html#tests-test-cot-module">tests.test_cot module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../tests.html#tests-test-docstores-module">tests.test_docstores module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../tests.html#tests-test-documents-module">tests.test_documents module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../tests.html#tests-test-elasticsearch-module">tests.test_elasticsearch module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../tests.html#tests-test-embedding-models-module">tests.test_embedding_models module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../tests.html#tests-test-indexing-retrieval-module">tests.test_indexing_retrieval module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../tests.html#tests-test-ingestor-module">tests.test_ingestor module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../tests.html#tests-test-llms-chat-models-module">tests.test_llms_chat_models module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../tests.html#tests-test-llms-completion-models-module">tests.test_llms_completion_models module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../tests.html#tests-test-post-processing-module">tests.test_post_processing module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../tests.html#tests-test-prompt-module">tests.test_prompt module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../tests.html#tests-test-promptui-module">tests.test_promptui module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../tests.html#tests-test-reader-module">tests.test_reader module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../tests.html#tests-test-reranking-module">tests.test_reranking module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../tests.html#module-tests.test_splitter">tests.test_splitter module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../tests.html#tests.test_splitter.TestSeparatorSplitter"><code class="docutils literal notranslate"><span class="pre">TestSeparatorSplitter</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../tests.html#tests.test_splitter.TestSeparatorSplitter.setUp"><code class="docutils literal notranslate"><span class="pre">TestSeparatorSplitter.setUp()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../tests.html#tests.test_splitter.TestSeparatorSplitter.test_chunk_overlap"><code class="docutils literal notranslate"><span class="pre">TestSeparatorSplitter.test_chunk_overlap()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../tests.html#tests.test_splitter.TestSeparatorSplitter.test_chunk_size_limit"><code class="docutils literal notranslate"><span class="pre">TestSeparatorSplitter.test_chunk_size_limit()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../tests.html#tests.test_splitter.TestSeparatorSplitter.test_chunking_by_seperators"><code class="docutils literal notranslate"><span class="pre">TestSeparatorSplitter.test_chunking_by_seperators()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../tests.html#tests.test_splitter.TestSeparatorSplitter.test_split_with_custom_separator"><code class="docutils literal notranslate"><span class="pre">TestSeparatorSplitter.test_split_with_custom_separator()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../tests.html#tests-test-table-reader-module">tests.test_table_reader module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../tests.html#tests-test-telemetry-module">tests.test_telemetry module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../tests.html#tests-test-template-module">tests.test_template module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../tests.html#tests-test-tools-module">tests.test_tools module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../tests.html#tests-test-vectorstore-module">tests.test_vectorstore module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../tests.html#module-tests">Module contents</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">Kotaemon Documentation</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">ktem.llms package</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../../_sources/libs/ktem/llms/ktem.llms.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="ktem-llms-package">
+<h1>ktem.llms package<a class="headerlink" href="#ktem-llms-package" title="Link to this heading"></a></h1>
+<section id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Link to this heading"></a></h2>
+</section>
+<section id="module-ktem.llms.db">
+<span id="ktem-llms-db-module"></span><h2>ktem.llms.db module<a class="headerlink" href="#module-ktem.llms.db" title="Link to this heading"></a></h2>
+</section>
+<section id="module-ktem.llms.manager">
+<span id="ktem-llms-manager-module"></span><h2>ktem.llms.manager module<a class="headerlink" href="#module-ktem.llms.manager" title="Link to this heading"></a></h2>
+</section>
+<section id="module-ktem.llms.ui">
+<span id="ktem-llms-ui-module"></span><h2>ktem.llms.ui module<a class="headerlink" href="#module-ktem.llms.ui" title="Link to this heading"></a></h2>
+</section>
+<section id="module-ktem.llms">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-ktem.llms" title="Link to this heading"></a></h2>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2025, Unify.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
